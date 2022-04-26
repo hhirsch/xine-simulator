@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xine Simulator
+    </title>
+</head>
+
+<body>
+<p>
+Click the button to start the simulation
+    </p>
+
+    <button id="start_button" onclick="startTimer()">
+        Start Timer
+    </button>
+
+    <button id="stop_button" onclick="stopTimer()">
+        Stop Timer
+    </button>
+
+    <script>
+        var timer;
+        var audio = new Audio('beep.wav');
+        function startTimer() {
+        document.getElementById("start_button").disabled = true;
+        document.getElementById("stop_button").disabled = false;
+        timer = setInterval(function() {
+        audio.play();
+        }, 10000);
+        }
+
+        function stopTimer() {
+        document.getElementById("start_button").disabled = false;
+        document.getElementById("stop_button").disabled = true;
+        clearInterval(timer);
+        }
+    </script>
+</body>
+</html>
